@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "pelicula")
@@ -13,12 +14,15 @@ public class Peliculabd {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    @NotBlank(message = "No puede ingresar un titulo vacio")
     @Column(name= "titulo")
     private String titulo;
     @Column(name= "anio")
     private String anio;
+    @NotBlank(message = "No puede ingresar un director vacio")
     @Column(name= "director")
     private String director;
+    @NotBlank(message = "No puede ingresar un genero vacio")
     @Column(name= "genero")
     private String genero;
     @Column(name= "sinopsis")

@@ -25,5 +25,25 @@ public class PeliculabdServiceImpl implements PeliculabdService{
         return peliculabdRepository.findById(id);
     }
 
+    @Override
+    public Peliculabd createPelicula(Peliculabd peliculabd) {
+        return peliculabdRepository.save(peliculabd);
+    }
+
+    @Override
+    public Peliculabd updatePelicula(Long id, Peliculabd peliculabd) {
+        if(peliculabdRepository.existsById(id)){
+            peliculabd.setId(id);
+            return peliculabdRepository.save(peliculabd);
+        }   else {
+                return null;
+        }
+    }
+
+    @Override
+    public void deletePelicula(Long id) {
+        peliculabdRepository.deleteById(id);
+    }
+
     
 }

@@ -8,4 +8,7 @@ import com.example.peliculabd.model.Peliculabd;
 public interface PeliculabdService {
     List<Peliculabd> getAllPeliculabds();
     Optional<Peliculabd> getPeliculabdById(Long id);
+    Peliculabd createPelicula(Peliculabd peliculabd);
+    Peliculabd updatePelicula(Long id,Peliculabd peliculabd);
+    void deletePelicula(Long id);
 }
